@@ -1,0 +1,31 @@
+ErgoNorma — Plataforma de análise ergonômica (NR 17 / NR 01)
+============================================================
+
+Como abrir
+----------
+O site usa módulos JavaScript e iframes, por isso
+deve ser aberto por um servidor web, e não clicando duas vezes no arquivo:
+
+  1. Abra um terminal nesta pasta.
+  2. Execute:  python -m http.server 8000
+  3. Acesse:   http://localhost:8000
+
+Também funciona publicado no GitHub Pages, Netlify ou em qualquer hospedagem estática.
+
+Estrutura
+---------
+index.html            Página principal (menus, painel geral, histórico)
+css/app.css           Estilos e temas claro/escuro
+js/core.js            Motor: formulários, cálculo, dashboards, relatórios, armazenamento
+js/tools-*.js         Ferramentas por categoria (29 ferramentas)
+js/app.js             Menus, rotas e página inicial
+apps/rula-ia/         ErgoApp (RULA automático com MediaPipe) — projeto anexado
+vendor/               Cópia local do Bootstrap (usada se a CDN não carregar)
+
+Dados
+-----
+As avaliações ficam salvas no navegador (localStorage). Use “Exportar backup” na
+página inicial para guardar um arquivo .json e “Importar backup” para restaurar.
+
+Bibliotecas: Bootstrap 5.3, Chart.js 4.4, Lucide Icons, MediaPipe Tasks Vision
+(carregadas por CDN; é necessário acesso à internet para gráficos, ícones).
